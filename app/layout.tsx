@@ -1,21 +1,30 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
+import SailingShip from "@/components/SailingShip";
+import CursorGlow from "@/components/CursorGlow";
+import BottomDock from "@/components/BottomDock";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
-  title: "Tanvi Batchu",
-  description: "CS & Finance at Waterloo. Building at the intersection of software, markets, and AI.",
+  title: "Your Name",
+  description: "Placeholder portfolio site.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <Nav />
-        <main className="max-w-[680px] mx-auto px-6">{children}</main>
-        <footer className="max-w-[680px] mx-auto px-6 py-10 pb-16">
-          <p className="text-xs text-[#888]">Tanvi Batchu &mdash; 2026</p>
-        </footer>
+      <body className={inter.className}>
+        <CursorGlow />
+        <SailingShip />
+        <div style={{ position: "relative", zIndex: 10 }}>
+          <main className="pb-24">{children}</main>
+        </div>
+        <BottomDock />
       </body>
     </html>
   );
