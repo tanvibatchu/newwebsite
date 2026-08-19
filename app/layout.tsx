@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import SailingShip from "@/components/SailingShip";
 import CursorGlow from "@/components/CursorGlow";
 import BottomDock from "@/components/BottomDock";
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={outfit.className}>
         <CursorGlow />
         <SailingShip />
         <div style={{ position: "relative", zIndex: 10 }}>
