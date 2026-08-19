@@ -1,19 +1,27 @@
+import React from "react";
 import DaysCounter from "@/components/DaysCounter";
 import ProjectCards from "@/components/ProjectCards";
 
 const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)" } as const;
 
 const bullets = [
-  "Placeholder achievement — replace with something cool you did.",
-  "Another highlight — a hackathon win, research, or project milestone.",
-  "Third bullet — an impact metric, reach, or recognition.",
-  "Fourth bullet — something that shows range or depth.",
-  "Fifth bullet — how you got started or what drives you.",
+  "co-founded a financial literacy org at 15 — grew it to 500+ students across Canada.",
+  "CIW bronze medallist — top 10 female competitive programmer out of 4,000+ in the CCC.",
+  "led social initiatives from age 13–18 tackling youth homelessness, affordable healthcare, and financial literacy.",
+  "6x provincial certamen champion — a roman history & latin academic competition. classics kid at heart.",
+  "carnatic vocalist for 15+ years — still practicing, still loving it.",
 ];
 
-const building = [
-  "Something cool you are currently working on",
-  "Another active project or role",
+const building: React.ReactNode[] = [
+  <>building multi-asset trading tools — researching & building models on the algo research team at <a href="https://www.rbccm.com/en/expertise/global-markets/electronic-trading/ai-trading" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>RBC Capital Markets</a>.</>,
+  <>
+    <a href="https://devpost.com/tanvibatchu10" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>hacking</a>
+    {", "}
+    <a href="#projects" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>building</a>
+    {", and "}
+    <a href="https://cemc.uwaterloo.ca/contests/past_contests/2025/2025CIWSummary.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>competitive programming</a>
+    {"! (click the links 🙈)"}
+  </>,
 ];
 
 const experience = [
@@ -104,46 +112,46 @@ export default function Home() {
     <div>
 
       {/* ─── HERO ─────────────────────────────────── */}
-      <section className="pt-20 pb-28">
+      <section className="pt-24 pb-32">
         <div style={wStyle}>
-        <div className="flex gap-12 items-start">
+        <div className="flex gap-16 items-start">
 
           {/* Left */}
           <div className="flex-1 min-w-0">
             <h1
-              className="font-extrabold leading-[1.05] mb-5"
+              className="font-extrabold leading-[1.05] mb-7"
               style={{ fontSize: "clamp(2.8rem, 6vw, 4rem)", letterSpacing: "-0.03em" }}
             >
               Hey! I&apos;m{" "}
-              <span style={{ color: "var(--accent)" }}>Your Name</span>.
+              <span style={{ color: "var(--accent)" }}>Tanvi</span>.
             </h1>
 
-            <p className="text-base mb-1" style={{ color: "var(--body)" }}>
-              I love building. CS @ Your University.
+            <p className="text-base mb-2" style={{ color: "var(--body)", lineHeight: 1.9 }}>
+              CS + Finance @ University of Waterloo
             </p>
-            <p className="text-sm italic mb-12" style={{ color: "var(--muted)" }}>
+            <p className="text-sm italic mb-14" style={{ color: "var(--muted)", lineHeight: 1.9 }}>
               <DaysCounter />
             </p>
 
-            <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--muted)" }}>
-              A brief dive:
+            <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "var(--muted)" }}>
+              Currently building:
             </p>
-            <ul className="flex flex-col gap-4 mb-12">
-              {bullets.map((b, i) => (
-                <li key={i} className="flex gap-3 text-[0.95rem]" style={{ color: "var(--body)", lineHeight: 1.65 }}>
-                  <span style={{ color: "var(--ink)" }} className="shrink-0 mt-0.5">•</span>
-                  {b}
+            <ul className="flex flex-col gap-3 mb-16">
+              {building.map((b, i) => (
+                <li key={i} className="flex gap-3 text-[0.95rem]" style={{ color: "var(--body)", lineHeight: 1.85 }}>
+                  <span style={{ color: "var(--ink)" }} className="shrink-0">•</span>
+                  <span>{b}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--muted)" }}>
-              Currently building:
+            <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "var(--muted)" }}>
+              A brief dive:
             </p>
-            <ul className="flex flex-col gap-3 mb-12">
-              {building.map((b, i) => (
-                <li key={i} className="flex gap-3 text-[0.95rem]" style={{ color: "var(--body)" }}>
-                  <span style={{ color: "var(--ink)" }} className="shrink-0">•</span>
+            <ul className="flex flex-col gap-3 mb-16">
+              {bullets.map((b, i) => (
+                <li key={i} className="flex gap-3 text-[0.95rem]" style={{ color: "var(--body)", lineHeight: 1.85 }}>
+                  <span style={{ color: "var(--ink)" }} className="shrink-0 mt-1">•</span>
                   {b}
                 </li>
               ))}
@@ -160,7 +168,6 @@ export default function Home() {
 
           {/* Right — photo + socials */}
           <div className="shrink-0 w-52 flex flex-col items-center gap-5 pt-1">
-            {/* Photo placeholder */}
             <div
               className="w-48 h-64 rounded-2xl flex items-center justify-center font-bold text-xl tracking-widest select-none"
               style={{
@@ -193,10 +200,10 @@ export default function Home() {
       </section>
 
       {/* ─── ABOUT (dark) ─────────────────────────── */}
-      <section id="about" style={{ background: "var(--bg-alt)" }} className="py-28">
+      <section id="about" style={{ background: "var(--bg-alt)" }} className="py-72">
         <div style={wStyle}>
           <h2
-            className="font-extrabold mb-14"
+            className="font-extrabold mb-16"
             style={{
               fontSize: "clamp(3rem, 8vw, 5.5rem)",
               letterSpacing: "-0.04em",
@@ -206,18 +213,18 @@ export default function Home() {
           >
             About me.
           </h2>
-          <div className="flex gap-12 items-start">
-            <div className="flex-1 flex flex-col gap-6">
-              <p style={{ color: "var(--body-alt)", lineHeight: 1.75 }}>
-                Hi! I&apos;m [Your Name], and I&apos;m a builder. I&apos;m obsessed with
-                [what you care about] and love to push the boundaries of [your field].
-                Replace this with your actual bio!
+          <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "4rem", alignItems: "center" }}>
+            <div className="flex flex-col gap-8">
+              <p style={{ color: "var(--body-alt)", lineHeight: 1.9 }}>
+                Hey! I&apos;m Tanvi, and I like solving random problems and building things. Ever since I was little, I&apos;ve loved the concept of solving problems and creating impact. It started with social initiatives and moved to programming to build the actual tools behind it.
               </p>
-              <p style={{ color: "var(--body-alt)", lineHeight: 1.75 }}>
-                In my free time I [hobby], [hobby], and [hobby]. Feel free to check out
-                my projects or reach out — I&apos;m always happy to chat.
+              <p style={{ color: "var(--body-alt)", lineHeight: 1.9 }}>
+                I also love my little life outside of tech. I love music and media (books, tv shows, you name it), cooking, and finding new spots in the city!
               </p>
-              <div className="flex gap-5 flex-wrap mt-1">
+              <p style={{ color: "var(--body-alt)", lineHeight: 1.9 }}>
+                Feel free to scroll through my experience and projects and let me know what you think! Or if you have any food spots in Toronto, let me know. Enjoy!
+              </p>
+              <div className="flex gap-6 flex-wrap mt-2">
                 {[
                   { label: "GitHub · username", href: "https://github.com" },
                   { label: "LinkedIn",           href: "https://linkedin.com" },
@@ -239,26 +246,32 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            {/* Photo placeholder */}
-            <div
-              className="shrink-0 w-44 h-56 rounded-2xl flex items-center justify-center font-bold tracking-widest select-none"
-              style={{
-                background: "rgba(255,255,255,0.12)",
-                border: "1px solid rgba(255,255,255,0.25)",
-                color: "rgba(255,255,255,0.35)",
-              }}
-            >
-              Photo
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <div className="shrink-0 flex flex-col gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/photo-whiteboard.png"
+                alt="Tanvi at a whiteboard"
+                className="w-56 rounded-2xl object-cover"
+                style={{ height: "160px", border: "1px solid rgba(255,255,255,0.25)", marginTop: "-80px" }}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/photo-kid.png"
+                alt="Tanvi as a kid"
+                className="w-56 rounded-2xl object-cover"
+                style={{ height: "160px", border: "1px solid rgba(255,255,255,0.25)" }}
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* ─── EXPERIENCE (light) ───────────────────── */}
-      <section id="experience" className="py-28" style={{ background: "var(--bg)" }}>
+      <section id="experience" className="py-72" style={{ background: "var(--bg)" }}>
         <div style={wStyle}>
           <h2
-            className="font-extrabold mb-16"
+            className="font-extrabold mb-20"
             style={{
               fontSize: "clamp(3rem, 8vw, 5.5rem)",
               letterSpacing: "-0.04em",
@@ -270,31 +283,27 @@ export default function Home() {
           </h2>
 
           <div className="relative">
-            {/* Timeline line */}
             <div
               className="absolute top-0 bottom-0 w-px"
               style={{ left: "4.2rem", background: "var(--border)" }}
             />
 
-            <div className="flex flex-col gap-14">
+            <div className="flex flex-col gap-24">
               {experience.map((e, i) => (
                 <div key={i} className="flex items-start">
-                  {/* Year */}
                   <div className="w-[4.2rem] pt-0.5 shrink-0">
                     <span className="text-xs font-bold" style={{ color: "var(--accent)" }}>
                       {e.year}
                     </span>
                   </div>
-                  {/* Dot */}
-                  <div className="shrink-0 mt-[0.32rem] mr-5 z-10 relative">
+                  <div className="shrink-0 mt-[0.32rem] mr-6 z-10 relative">
                     <div
                       className="w-2.5 h-2.5 rounded-full border-2"
                       style={{ background: "var(--bg)", borderColor: "var(--accent)" }}
                     />
                   </div>
-                  {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1.5 mb-1">
+                    <div className="flex items-center gap-1.5 mb-2">
                       <h3 className="font-semibold text-base" style={{ color: "var(--ink)" }}>
                         {e.company}
                       </h3>
@@ -308,15 +317,15 @@ export default function Home() {
                         ↗
                       </a>
                     </div>
-                    <p className="text-sm italic mb-4" style={{ color: "var(--muted)" }}>
+                    <p className="text-sm italic mb-5" style={{ color: "var(--muted)" }}>
                       {e.role} · {e.location}
                     </p>
-                    <ul className="flex flex-col gap-2.5">
+                    <ul className="flex flex-col gap-2">
                       {e.bullets.map((b, j) => (
                         <li
                           key={j}
-                          className="flex gap-2.5 text-[0.88rem]"
-                          style={{ color: "var(--body)", lineHeight: 1.65 }}
+                          className="flex gap-3 text-[0.88rem]"
+                          style={{ color: "var(--body)", lineHeight: 1.85 }}
                         >
                           <span style={{ color: "var(--border)" }} className="shrink-0 mt-1 text-xs">◦</span>
                           {b}
@@ -332,9 +341,9 @@ export default function Home() {
       </section>
 
       {/* ─── PROJECTS (light) ─────────────────────── */}
-      <section id="projects" className="py-28" style={{ background: "var(--bg)" }}>
+      <section id="projects" className="py-72" style={{ background: "var(--bg)" }}>
         <div style={wStyle}>
-          <div className="flex items-end justify-between mb-14">
+          <div className="flex items-end justify-between mb-16">
             <h2
               className="font-extrabold"
               style={{
@@ -361,10 +370,10 @@ export default function Home() {
       </section>
 
       {/* ─── EDUCATION (dark) ─────────────────────── */}
-      <section id="education" style={{ background: "var(--bg-alt)" }} className="py-28">
+      <section id="education" style={{ background: "var(--bg-alt)" }} className="py-72">
         <div style={wStyle}>
           <h2
-            className="font-extrabold mb-14"
+            className="font-extrabold mb-16"
             style={{
               fontSize: "clamp(3rem, 8vw, 5.5rem)",
               letterSpacing: "-0.04em",
