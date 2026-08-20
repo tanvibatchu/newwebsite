@@ -6,7 +6,7 @@ const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2re
 
 const bullets = [
   "co-founded a financial literacy org at 15 — grew it to 500+ students across Canada.",
-  "CIW bronze medallist — top 10 female competitive programmer out of 4,000+ in the CCC.",
+  "EGOI National Team Camp Qualifier — top 10 female competitive programmer out of 4,000+ in the CCC.",
   "led social initiatives from age 13–18 tackling youth homelessness, affordable healthcare, and financial literacy.",
   "6x provincial certamen champion — a roman history & latin academic competition. classics kid at heart.",
   "carnatic vocalist for 15+ years — still practicing, still loving it.",
@@ -59,7 +59,7 @@ export default function Home() {
     <div>
 
       {/* ─── HERO ─────────────────────────────────── */}
-      <section className="pt-52 pb-32">
+      <section className="pt-96 pb-32">
         <div style={wStyle}>
 
         {/* Top nav */}
@@ -75,23 +75,39 @@ export default function Home() {
                 Hey! I&apos;m{" "}
                 <span style={{ color: "var(--accent)" }}>Tanvi</span>.
               </h1>
-              <Link
-                href="/work"
-                className="font-semibold transition-opacity hover:opacity-60 shrink-0 ml-6"
-                style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
-              >
-                work →
-              </Link>
+              <div className="flex items-center gap-4 shrink-0 ml-6">
+                <Link
+                  href="/work"
+                  className="font-semibold transition-opacity hover:opacity-60"
+                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+                >
+                  work
+                </Link>
+                <Link
+                  href="/work#projects"
+                  className="font-semibold transition-opacity hover:opacity-60"
+                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+                >
+                  projects
+                </Link>
+                <Link
+                  href="/work#awards"
+                  className="font-semibold transition-opacity hover:opacity-60"
+                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+                >
+                  awards
+                </Link>
+              </div>
             </div>
 
             <p className="text-base mb-2" style={{ color: "var(--body)", lineHeight: 1.9 }}>
-              CS + Finance @ University of Waterloo
+              <a href="https://uwaterloo.ca/future-students/programs/computing-and-financial-management" target="_blank" rel="noopener noreferrer" style={{ color: "var(--body)", textDecoration: "underline", textUnderlineOffset: "3px" }}>CS + Finance @ University of Waterloo</a>
             </p>
             <p className="text-sm italic mb-14" style={{ color: "var(--muted)", lineHeight: 1.9 }}>
               <DaysCounter />
             </p>
 
-            <p className="text-xs font-semibold uppercase tracking-widest mb-6 mt-2" style={{ color: "var(--muted)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--muted)", marginTop: "0.5rem", marginBottom: "1rem" }}>
               Currently building:
             </p>
             <ul className="flex flex-col gap-1.5 mb-6">
@@ -103,7 +119,7 @@ export default function Home() {
               ))}
             </ul>
 
-            <p className="text-xs font-semibold uppercase tracking-widest mb-4 mt-6" style={{ color: "var(--muted)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--muted)", marginTop: "1.5rem", marginBottom: "1rem" }}>
               A brief dive:
             </p>
             <ul className="flex flex-col gap-1.5 mb-16">
@@ -131,7 +147,7 @@ export default function Home() {
               src="/photo-main.png"
               alt="Tanvi"
               className="w-48 rounded-2xl object-cover object-top"
-              style={{ height: "256px", border: "1px solid var(--border)" }}
+              style={{ height: "256px", border: "1px solid var(--border)", marginTop: "7rem" }}
             />
             <div className="flex gap-3">
               {socials.map((s) => (
@@ -155,21 +171,21 @@ export default function Home() {
       </section>
 
       {/* ─── ABOUT (dark) ─────────────────────────── */}
-      <section id="about" style={{ background: "var(--bg-alt)" }} className="py-72">
+      <section id="about" style={{ background: "var(--bg-alt)" }} className="pt-96 pb-72">
         <div style={wStyle}>
           <h2
             className="font-extrabold mb-16"
             style={{
-              fontSize: "clamp(3rem, 8vw, 5.5rem)",
+              fontSize: "clamp(2.2rem, 6vw, 4rem)",
               letterSpacing: "-0.04em",
               lineHeight: 1,
               color: "var(--ink-alt)",
             }}
           >
-            About me.
+            About me
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "4rem", alignItems: "center" }}>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
               <p style={{ color: "var(--body-alt)", lineHeight: 1.9 }}>
                 Hey! I&apos;m Tanvi, and I like solving random problems and building things. Ever since I was little, I&apos;ve loved the concept of solving problems and creating impact. It started with social initiatives and moved to programming to build the actual tools behind it.
               </p>
