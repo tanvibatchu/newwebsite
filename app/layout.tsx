@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import SailingShip from "@/components/SailingShip";
 import CursorGlow from "@/components/CursorGlow";
 import BottomDock from "@/components/BottomDock";
 
@@ -20,7 +19,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={outfit.className}>
         <CursorGlow />
-        <SailingShip />
         <div style={{ position: "relative", zIndex: 10 }}>
           <main className="pb-24">{children}</main>
         </div>

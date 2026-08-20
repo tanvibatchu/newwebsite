@@ -1,6 +1,6 @@
 import React from "react";
+import Link from "next/link";
 import DaysCounter from "@/components/DaysCounter";
-import ProjectCards from "@/components/ProjectCards";
 
 const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)" } as const;
 
@@ -17,58 +17,13 @@ const building: React.ReactNode[] = [
   <>
     <a href="https://devpost.com/tanvibatchu10" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>hacking</a>
     {", "}
-    <a href="#projects" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>building</a>
+    <a href="/work#projects" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>building</a>
     {", and "}
     <a href="https://cemc.uwaterloo.ca/contests/past_contests/2025/2025CIWSummary.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>competitive programming</a>
     {"! (click the links 🙈)"}
   </>,
 ];
 
-const experience = [
-  {
-    year: "2026",
-    company: "Company A",
-    href: "#",
-    role: "Role Title",
-    location: "City",
-    bullets: [
-      "Placeholder bullet describing what you built or owned here.",
-      "Quantifiable impact — users, revenue, latency, accuracy, etc.",
-    ],
-  },
-  {
-    year: "2025",
-    company: "Company B",
-    href: "#",
-    role: "Role Title",
-    location: "City",
-    bullets: [
-      "Placeholder bullet for this role.",
-      "Second bullet describing scope or outcome.",
-    ],
-  },
-  {
-    year: "2025",
-    company: "Company C",
-    href: "#",
-    role: "Role Title",
-    location: "City",
-    bullets: [
-      "Placeholder — research, startup, or open source contribution.",
-    ],
-  },
-  {
-    year: "2024",
-    company: "Company D",
-    href: "#",
-    role: "Intern / Role Title",
-    location: "City",
-    bullets: [
-      "Placeholder internship bullet.",
-      "What you shipped, learned, or improved.",
-    ],
-  },
-];
 
 function GithubIcon() {
   return (
@@ -92,19 +47,11 @@ function MailIcon() {
     </svg>
   );
 }
-function XIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
-      <path d="M13.5 1.5h2.5L10.5 8 17 16.5h-4.5L9 11.5l-4 5H.5L7 9 1 1.5h4.6L9 6.2l4.5-4.7zm-.9 13.5h1.4L5.4 3H3.9L12.6 15z" />
-    </svg>
-  );
-}
 
 const socials = [
-  { href: "https://github.com",   icon: <GithubIcon />,   label: "GitHub"   },
-  { href: "https://linkedin.com", icon: <LinkedInIcon />, label: "LinkedIn" },
-  { href: "mailto:you@email.com", icon: <MailIcon />,     label: "Email"    },
-  { href: "https://x.com",        icon: <XIcon />,        label: "X"        },
+  { href: "https://github.com/tanvibatchu",            icon: <GithubIcon />,   label: "GitHub"   },
+  { href: "https://www.linkedin.com/in/tanvi-batchu/", icon: <LinkedInIcon />, label: "LinkedIn" },
+  { href: "mailto:tanvibatchuw@gmail.com",             icon: <MailIcon />,     label: "Email"    },
 ];
 
 export default function Home() {
@@ -112,19 +59,30 @@ export default function Home() {
     <div>
 
       {/* ─── HERO ─────────────────────────────────── */}
-      <section className="pt-24 pb-32">
+      <section className="pt-52 pb-32">
         <div style={wStyle}>
+
+        {/* Top nav */}
         <div className="flex gap-16 items-start">
 
           {/* Left */}
           <div className="flex-1 min-w-0">
-            <h1
-              className="font-extrabold leading-[1.05] mb-7"
-              style={{ fontSize: "clamp(2.8rem, 6vw, 4rem)", letterSpacing: "-0.03em" }}
-            >
-              Hey! I&apos;m{" "}
-              <span style={{ color: "var(--accent)" }}>Tanvi</span>.
-            </h1>
+            <div className="flex items-baseline justify-between mb-7">
+              <h1
+                className="font-extrabold leading-[1.05]"
+                style={{ fontSize: "clamp(2.8rem, 6vw, 4rem)", letterSpacing: "-0.03em" }}
+              >
+                Hey! I&apos;m{" "}
+                <span style={{ color: "var(--accent)" }}>Tanvi</span>.
+              </h1>
+              <Link
+                href="/work"
+                className="font-semibold transition-opacity hover:opacity-60 shrink-0 ml-6"
+                style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+              >
+                work →
+              </Link>
+            </div>
 
             <p className="text-base mb-2" style={{ color: "var(--body)", lineHeight: 1.9 }}>
               CS + Finance @ University of Waterloo
@@ -133,10 +91,10 @@ export default function Home() {
               <DaysCounter />
             </p>
 
-            <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "var(--muted)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-6 mt-2" style={{ color: "var(--muted)" }}>
               Currently building:
             </p>
-            <ul className="flex flex-col gap-3 mb-16">
+            <ul className="flex flex-col gap-1.5 mb-6">
               {building.map((b, i) => (
                 <li key={i} className="flex gap-3 text-[0.95rem]" style={{ color: "var(--body)", lineHeight: 1.85 }}>
                   <span style={{ color: "var(--ink)" }} className="shrink-0">•</span>
@@ -145,10 +103,10 @@ export default function Home() {
               ))}
             </ul>
 
-            <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "var(--muted)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-4 mt-6" style={{ color: "var(--muted)" }}>
               A brief dive:
             </p>
-            <ul className="flex flex-col gap-3 mb-16">
+            <ul className="flex flex-col gap-1.5 mb-16">
               {bullets.map((b, i) => (
                 <li key={i} className="flex gap-3 text-[0.95rem]" style={{ color: "var(--body)", lineHeight: 1.85 }}>
                   <span style={{ color: "var(--ink)" }} className="shrink-0 mt-1">•</span>
@@ -157,27 +115,24 @@ export default function Home() {
               ))}
             </ul>
 
-            <a
-              href="#about"
-              className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-70"
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-70 mt-6"
               style={{ color: "var(--accent)" }}
             >
-              Dive deeper <span>↓</span>
-            </a>
+              See my work <span>→</span>
+            </Link>
           </div>
 
           {/* Right — photo + socials */}
-          <div className="shrink-0 w-52 flex flex-col items-center gap-5 pt-1">
-            <div
-              className="w-48 h-64 rounded-2xl flex items-center justify-center font-bold text-xl tracking-widest select-none"
-              style={{
-                background: "var(--surface)",
-                border: "1px solid var(--border)",
-                color: "var(--muted)",
-              }}
-            >
-              Photo
-            </div>
+          <div className="shrink-0 w-52 flex flex-col items-start gap-5 pt-1">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/photo-main.png"
+              alt="Tanvi"
+              className="w-48 rounded-2xl object-cover object-top"
+              style={{ height: "256px", border: "1px solid var(--border)" }}
+            />
             <div className="flex gap-3">
               {socials.map((s) => (
                 <a
@@ -224,10 +179,17 @@ export default function Home() {
               <p style={{ color: "var(--body-alt)", lineHeight: 1.9 }}>
                 Feel free to scroll through my experience and projects and let me know what you think! Or if you have any food spots in Toronto, let me know. Enjoy!
               </p>
+              <Link
+                href="/work"
+                className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-70"
+                style={{ color: "rgba(255,255,255,0.9)" }}
+              >
+                View my work →
+              </Link>
               <div className="flex gap-6 flex-wrap mt-2">
                 {[
-                  { label: "GitHub · username", href: "https://github.com" },
-                  { label: "LinkedIn",           href: "https://linkedin.com" },
+                  { label: "GitHub", href: "https://github.com/tanvibatchu" },
+                  { label: "LinkedIn", href: "https://www.linkedin.com/in/tanvi-batchu/" },
                 ].map((l) => (
                   <a
                     key={l.label}
@@ -263,166 +225,6 @@ export default function Home() {
                 style={{ height: "160px", border: "1px solid rgba(255,255,255,0.25)" }}
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── EXPERIENCE (light) ───────────────────── */}
-      <section id="experience" className="py-72" style={{ background: "var(--bg)" }}>
-        <div style={wStyle}>
-          <h2
-            className="font-extrabold mb-20"
-            style={{
-              fontSize: "clamp(3rem, 8vw, 5.5rem)",
-              letterSpacing: "-0.04em",
-              lineHeight: 1,
-              color: "var(--ink)",
-            }}
-          >
-            Experience
-          </h2>
-
-          <div className="relative">
-            <div
-              className="absolute top-0 bottom-0 w-px"
-              style={{ left: "4.2rem", background: "var(--border)" }}
-            />
-
-            <div className="flex flex-col gap-24">
-              {experience.map((e, i) => (
-                <div key={i} className="flex items-start">
-                  <div className="w-[4.2rem] pt-0.5 shrink-0">
-                    <span className="text-xs font-bold" style={{ color: "var(--accent)" }}>
-                      {e.year}
-                    </span>
-                  </div>
-                  <div className="shrink-0 mt-[0.32rem] mr-6 z-10 relative">
-                    <div
-                      className="w-2.5 h-2.5 rounded-full border-2"
-                      style={{ background: "var(--bg)", borderColor: "var(--accent)" }}
-                    />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1.5 mb-2">
-                      <h3 className="font-semibold text-base" style={{ color: "var(--ink)" }}>
-                        {e.company}
-                      </h3>
-                      <a
-                        href={e.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm transition-opacity hover:opacity-50"
-                        style={{ color: "var(--accent)" }}
-                      >
-                        ↗
-                      </a>
-                    </div>
-                    <p className="text-sm italic mb-5" style={{ color: "var(--muted)" }}>
-                      {e.role} · {e.location}
-                    </p>
-                    <ul className="flex flex-col gap-2">
-                      {e.bullets.map((b, j) => (
-                        <li
-                          key={j}
-                          className="flex gap-3 text-[0.88rem]"
-                          style={{ color: "var(--body)", lineHeight: 1.85 }}
-                        >
-                          <span style={{ color: "var(--border)" }} className="shrink-0 mt-1 text-xs">◦</span>
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── PROJECTS (light) ─────────────────────── */}
-      <section id="projects" className="py-72" style={{ background: "var(--bg)" }}>
-        <div style={wStyle}>
-          <div className="flex items-end justify-between mb-16">
-            <h2
-              className="font-extrabold"
-              style={{
-                fontSize: "clamp(3rem, 8vw, 5.5rem)",
-                letterSpacing: "-0.04em",
-                lineHeight: 1,
-                color: "var(--ink)",
-              }}
-            >
-              Projects
-            </h2>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-1 px-4 py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-75"
-              style={{ background: "var(--accent)", color: "#fff" }}
-            >
-              View all projects
-            </a>
-          </div>
-          <ProjectCards />
-        </div>
-      </section>
-
-      {/* ─── EDUCATION (dark) ─────────────────────── */}
-      <section id="education" style={{ background: "var(--bg-alt)" }} className="py-72">
-        <div style={wStyle}>
-          <h2
-            className="font-extrabold mb-16"
-            style={{
-              fontSize: "clamp(3rem, 8vw, 5.5rem)",
-              letterSpacing: "-0.04em",
-              lineHeight: 1,
-              color: "var(--ink-alt)",
-            }}
-          >
-            Education
-          </h2>
-          <div className="flex flex-col gap-4">
-            {[
-              {
-                abbr: "UX",
-                name: "Your University",
-                detail: "Degree Program · Year – Present",
-                sub: "Go [Team]!!",
-              },
-              {
-                abbr: "HS",
-                name: "Your High School",
-                detail: "Year – Year",
-                sub: "Placeholder tagline or notable program",
-              },
-            ].map((edu) => (
-              <div
-                key={edu.name}
-                className="flex items-center gap-5 p-6 rounded-2xl"
-                style={{
-                  background: "rgba(255,255,255,0.1)",
-                  border: "1px solid rgba(255,255,255,0.2)",
-                }}
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-xs font-bold shrink-0"
-                  style={{
-                    background: "rgba(255,255,255,0.15)",
-                    color: "#fff",
-                    border: "1px solid rgba(255,255,255,0.25)",
-                  }}
-                >
-                  {edu.abbr}
-                </div>
-                <div>
-                  <p className="font-semibold text-sm" style={{ color: "var(--ink-alt)" }}>{edu.name}</p>
-                  <p className="text-xs italic mt-0.5" style={{ color: "var(--muted-alt)" }}>{edu.detail}</p>
-                  <p className="text-xs mt-1" style={{ color: "var(--body-alt)" }}>{edu.sub}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
