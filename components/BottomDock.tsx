@@ -32,6 +32,17 @@ function GradCapIcon() {
     </svg>
   );
 }
+function TrophyIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5.5 2h6v6a3 3 0 01-6 0V2z" />
+      <path d="M2 2h3.5v3.5A1.75 1.75 0 013.75 7.25" />
+      <path d="M15 2h-3.5v3.5A1.75 1.75 0 0113.25 7.25" />
+      <line x1="8.5" y1="11" x2="8.5" y2="13.5" />
+      <path d="M5.5 13.5h6" />
+    </svg>
+  );
+}
 function GithubIcon() {
   return (
     <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor">
@@ -41,19 +52,15 @@ function GithubIcon() {
 }
 
 const items = [
-  { id: "top",        label: "Home",       icon: <HomeIcon />,      scroll: true  },
-  { id: "experience", label: "Experience", icon: <BriefcaseIcon />, scroll: true  },
-  { id: "projects",   label: "Projects",   icon: <FolderIcon />,    scroll: true  },
-  { id: "education",  label: "Education",  icon: <GradCapIcon />,   scroll: true  },
-  { id: "github",     label: "GitHub",     icon: <GithubIcon />,    href: "https://github.com" },
+  { id: "home",       label: "Home",       icon: <HomeIcon />,      href: "/"                  },
+  { id: "experience", label: "Experience", icon: <BriefcaseIcon />, href: "/work#experience"   },
+  { id: "projects",   label: "Projects",   icon: <FolderIcon />,    href: "/work#projects"     },
+  { id: "awards",     label: "Awards",     icon: <TrophyIcon />,    href: "/work#awards"       },
+  { id: "education",  label: "Education",  icon: <GradCapIcon />,   href: "/work#education"    },
+  { id: "github",     label: "GitHub",     icon: <GithubIcon />,    href: "https://github.com/tanvibatchu" },
 ];
 
 export default function BottomDock() {
-  const scrollTo = (id: string) => {
-    if (id === "top") window.scrollTo({ top: 0, behavior: "smooth" });
-    else document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div
       className="fixed bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 px-3 py-2 rounded-full"
@@ -64,31 +71,19 @@ export default function BottomDock() {
         boxShadow: "0 4px 28px var(--shadow-lg)",
       }}
     >
-      {items.map((item) =>
-        "href" in item ? (
-          <a
-            key={item.id}
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={item.label}
-            className="w-10 h-10 flex items-center justify-center rounded-full transition-all hover:opacity-60"
-            style={{ color: "var(--accent)" }}
-          >
-            {item.icon}
-          </a>
-        ) : (
-          <button
-            key={item.id}
-            onClick={() => scrollTo(item.id)}
-            title={item.label}
-            className="w-10 h-10 flex items-center justify-center rounded-full transition-all hover:opacity-60"
-            style={{ color: "var(--muted)" }}
-          >
-            {item.icon}
-          </button>
-        )
-      )}
+      {items.map((item) => (
+        <a
+          key={item.id}
+          href={item.href}
+          target={item.href.startsWith("http") ? "_blank" : undefined}
+          rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+          title={item.label}
+          className="w-10 h-10 flex items-center justify-center rounded-full transition-all hover:opacity-60"
+          style={{ color: item.href.startsWith("http") ? "var(--accent)" : "var(--muted)" }}
+        >
+          {item.icon}
+        </a>
+      ))}
     </div>
   );
 }
