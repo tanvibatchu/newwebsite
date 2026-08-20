@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import DaysCounter from "@/components/DaysCounter";
 
 const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)" } as const;
 
@@ -9,7 +8,6 @@ const bullets = [
   "EGOI National Team Camp Qualifier — top 10 female competitive programmer out of 4,000+ in the CCC.",
   "led social initiatives from age 13–18 tackling youth homelessness, affordable healthcare, and financial literacy.",
   "6x provincial certamen champion — a roman history & latin academic competition. classics kid at heart.",
-  "carnatic vocalist for 15+ years — still practicing, still loving it.",
 ];
 
 const building: React.ReactNode[] = [
@@ -59,52 +57,24 @@ export default function Home() {
     <div>
 
       {/* ─── HERO ─────────────────────────────────── */}
-      <section className="pt-96 pb-32">
+      <section className="pb-32" style={{ paddingTop: "2rem" }}>
         <div style={wStyle}>
 
         {/* Top nav */}
-        <div className="flex gap-16 items-start">
+        <div className="flex gap-4 items-start">
 
           {/* Left */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-baseline justify-between mb-7">
-              <h1
-                className="font-extrabold leading-[1.05]"
-                style={{ fontSize: "clamp(2.8rem, 6vw, 4rem)", letterSpacing: "-0.03em" }}
-              >
-                Hey! I&apos;m{" "}
-                <span style={{ color: "var(--accent)" }}>Tanvi</span>.
-              </h1>
-              <div className="flex items-center gap-4 shrink-0 ml-6">
-                <Link
-                  href="/work"
-                  className="font-semibold transition-opacity hover:opacity-60"
-                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
-                >
-                  work
-                </Link>
-                <Link
-                  href="/work#projects"
-                  className="font-semibold transition-opacity hover:opacity-60"
-                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
-                >
-                  projects
-                </Link>
-                <Link
-                  href="/work#awards"
-                  className="font-semibold transition-opacity hover:opacity-60"
-                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
-                >
-                  awards
-                </Link>
-              </div>
-            </div>
+            <h1
+              className="font-extrabold leading-[1.05] mb-7"
+                style={{ fontSize: "clamp(2.4rem, 5vw, 3.2rem)", letterSpacing: "-0.03em" }}
+            >
+              Hey! I&apos;m{" "}
+              <span style={{ color: "var(--accent)" }}>Tanvi</span>.
+            </h1>
 
-            <p className="text-base mb-2" style={{ color: "var(--body)", lineHeight: 1.9 }}>
+            <p className="text-base mb-14" style={{ color: "var(--body)", lineHeight: 1.9 }}>
               <a href="https://uwaterloo.ca/future-students/programs/computing-and-financial-management" target="_blank" rel="noopener noreferrer" style={{ color: "var(--body)", textDecoration: "underline", textUnderlineOffset: "3px" }}>CS + Finance @ University of Waterloo</a>
-            </p>
-            <p className="text-sm italic mb-14" style={{ color: "var(--muted)", lineHeight: 1.9 }}>
-              <DaysCounter />
             </p>
 
             <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--muted)", marginTop: "0.5rem", marginBottom: "1rem" }}>
@@ -140,16 +110,32 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Right — photo + socials */}
-          <div className="shrink-0 w-52 flex flex-col items-start gap-5 pt-1">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/photo-main.png"
-              alt="Tanvi"
-              className="w-48 rounded-2xl object-cover object-top"
-              style={{ height: "256px", border: "1px solid var(--border)", marginTop: "7rem" }}
-            />
-            <div className="flex gap-3">
+          {/* Right — nav + photo */}
+          <div className="shrink-0 flex flex-col items-start gap-5" style={{ width: "auto", paddingTop: "1.25rem" }}>
+            {/* Nav links + socials */}
+            <div className="flex items-center gap-3 whitespace-nowrap">
+              <Link
+                href="/work"
+                className="font-semibold transition-opacity hover:opacity-60"
+                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+                >
+                  work
+                </Link>
+                <Link
+                  href="/work#projects"
+                  className="font-semibold transition-opacity hover:opacity-60"
+                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+                >
+                  projects
+                </Link>
+                <Link
+                  href="/work#awards"
+                  className="font-semibold transition-opacity hover:opacity-60"
+                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+                >
+                  awards
+                </Link>
+              <span style={{ color: "var(--border)" }}>|</span>
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -164,6 +150,13 @@ export default function Home() {
                 </a>
               ))}
             </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/photo-main.png"
+              alt="Tanvi"
+              className="w-48 rounded-2xl object-cover object-top"
+              style={{ height: "256px", width: "192px", border: "1px solid var(--border)", marginTop: "2.5rem" }}
+            />
           </div>
 
         </div>
@@ -171,12 +164,12 @@ export default function Home() {
       </section>
 
       {/* ─── ABOUT (dark) ─────────────────────────── */}
-      <section id="about" style={{ background: "var(--bg-alt)" }} className="pt-96 pb-72">
+      <section id="about" style={{ background: "var(--bg-alt)", paddingTop: "1rem" }} className="pb-72">
         <div style={wStyle}>
           <h2
             className="font-extrabold mb-16"
             style={{
-              fontSize: "clamp(2.2rem, 6vw, 4rem)",
+              fontSize: "clamp(1.6rem, 4vw, 2.5rem)",
               letterSpacing: "-0.04em",
               lineHeight: 1,
               color: "var(--ink-alt)",
