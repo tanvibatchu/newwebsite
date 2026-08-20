@@ -9,7 +9,7 @@ const professional = [
     period: "May 2026 – Dec 2026",
     location: "Toronto, ON",
     description:
-      "Built multi-asset algo trading tools including futures cost optimization, ETF-to-single-security mapping, and EMEA/AMRS/APAC coverage expansion. Developed an arrival cost decomposition model isolating execution performance from market volatility. Grew Algo Monocle adoption from 7 to 30 users by building an LLM-powered research tool for traders and quants. Engineered kdb+/q scripts reducing order data prep from 2 hours to under 10 minutes.",
+      "Built multi-asset algo trading tools including ETF-to-single-security mapping and EMEA/AMRS/APAC coverage expansion. Developed an arrival cost decomposition model isolating execution performance from market volatility. Built an LLM-powered algorithmic trading analysis assistant for traders and quants. Engineered kdb+/q scripts reducing order data prep from 2 hours to under 10 minutes.",
     tags: ["Python", "kdb+/q", "LLMs", "Algo Trading", "TypeScript"],
     color: "#003168",
     abbr: "RBC",
@@ -121,7 +121,7 @@ export default function ExperienceSection() {
       </div>
 
       {/* Entries */}
-      <div className="flex flex-col" style={{ gap: "3rem" }}>
+      <div className="flex flex-col" style={{ gap: "2rem" }}>
         {items.map((e, i) => (
           <div key={i} className="flex gap-5 items-start">
             {/* Logo */}
@@ -139,7 +139,7 @@ export default function ExperienceSection() {
 
             {/* Content */}
             <div className="flex-1 min-w-0">
-              <div className="flex items-baseline gap-2 flex-wrap mb-2">
+              <div className="flex items-baseline gap-2 flex-wrap mb-1">
                 <span className="font-bold text-base" style={{ color: "var(--ink)" }}>
                   {e.role}
                 </span>
@@ -153,17 +153,17 @@ export default function ExperienceSection() {
                   {e.company}
                 </a>
               </div>
-              <p className="text-xs mb-4" style={{ color: "var(--muted)" }}>
+              <p className="text-xs mb-3" style={{ color: "var(--muted)", opacity: 0.7 }}>
                 {e.period} · {e.location}
               </p>
-              <p className="text-[0.9rem] mb-6" style={{ color: "var(--body)", lineHeight: 1.9 }}>
+              <p className="text-[0.88rem] mb-4" style={{ color: "var(--body)", lineHeight: 1.75 }}>
                 {e.description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {e.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 rounded-full text-xs"
+                    className="px-2.5 py-0.5 rounded-full text-xs"
                     style={{
                       border: "1px solid var(--border)",
                       color: "var(--muted)",
