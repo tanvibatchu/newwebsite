@@ -3,11 +3,11 @@ import Link from "next/link";
 
 const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)" } as const;
 
-const bullets = [
-  "co-founded a financial literacy org at 15 — grew it to 500+ students across Canada.",
+const bullets: React.ReactNode[] = [
+  <>co-founded a financial literacy org at 15 — grew it to 500+ students across Canada.</>,
   "EGOI National Team Camp Qualifier — top 10 female competitive programmer out of 4,000+ in the CCC.",
   "led social initiatives from age 13–18 tackling youth homelessness, affordable healthcare, and financial literacy.",
-  "6x provincial certamen champion — a roman history & latin academic competition. classics kid at heart.",
+  "huge classics nerd — 6x provincial certamen champion in roman history & latin.",
 ];
 
 const building: React.ReactNode[] = [
@@ -78,7 +78,7 @@ export default function Home() {
             </p>
 
             <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "var(--muted)", marginTop: "0.5rem", marginBottom: "1rem" }}>
-              Currently building:
+              Currently:
             </p>
             <ul className="flex flex-col gap-1.5 mb-6">
               {building.map((b, i) => (
@@ -224,7 +224,7 @@ export default function Home() {
                 src="/photo-whiteboard.png"
                 alt="Tanvi at a whiteboard"
                 className="w-56 rounded-2xl object-cover"
-                style={{ height: "160px", border: "1px solid rgba(255,255,255,0.25)", marginTop: "-80px" }}
+                style={{ height: "160px", border: "1px solid rgba(255,255,255,0.25)", marginTop: "0px" }}
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
