@@ -183,7 +183,7 @@ export default function Home() {
                 Hey! I&apos;m Tanvi, and I like solving random problems and building things. Ever since I was little, I&apos;ve loved the concept of solving problems and creating impact. It started with social initiatives and moved to programming to build the actual tools behind it.
               </p>
               <p style={{ color: "var(--body-alt)", lineHeight: 1.9 }}>
-                I also love my little life outside of tech. I love music and media (books, tv shows, you name it), cooking, and finding new spots in the city!
+                Outside of tech, I love music (I&apos;ve been singing carnatic music for 15+ years!), media (books, tv shows, you name it), cooking, and finding new spots in the city!
               </p>
               <p style={{ color: "var(--body-alt)", lineHeight: 1.9 }}>
                 Feel free to scroll through my experience and projects and let me know what you think! Or if you have any food spots in Toronto, let me know. Enjoy!

@@ -11,8 +11,11 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name",
-  description: "Placeholder portfolio site.",
+  title: "Tanvi",
+  description: "Tanvi Batchu's portfolio.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
