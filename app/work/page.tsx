@@ -2,7 +2,7 @@ import Link from "next/link";
 import ProjectCards from "@/components/ProjectCards";
 import ExperienceSection from "@/components/ExperienceSection";
 
-const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)" } as const;
+const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)", maxWidth: "1200px", margin: "0 auto" } as const;
 
 const awards = [
       {

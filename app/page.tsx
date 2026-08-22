@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)" } as const;
+const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)", maxWidth: "1200px", margin: "0 auto" } as const;
 
 const bullets: React.ReactNode[] = [
   <>co-founded a financial literacy org at 15 — grew it to 500+ students across Canada.</>,
@@ -134,6 +134,13 @@ export default function Home() {
                   style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
                 >
                   awards
+                </Link>
+                <Link
+                  href="/media"
+                  className="font-semibold transition-opacity hover:opacity-60"
+                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+                >
+                  media
                 </Link>
               <span style={{ color: "var(--border)" }}>|</span>
               {socials.map((s) => (
