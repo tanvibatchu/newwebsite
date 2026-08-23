@@ -103,13 +103,15 @@ export default function ExperienceSection() {
   return (
     <div style={{ paddingTop: "2.5rem" }}>
       {/* Toggle */}
-      <div className="flex gap-2" style={{ marginBottom: "2.5rem" }}>
+      <div className="flex gap-3" style={{ marginBottom: "2.5rem" }}>
         {(["professional", "extracurricular"] as const).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
-            className="px-5 py-2 rounded-full text-sm font-semibold capitalize transition-all"
+            className="rounded-full font-semibold capitalize transition-all"
             style={{
+              padding: "0.3rem 1rem",
+              fontSize: "0.8rem",
               background: tab === t ? "var(--ink)" : "var(--surface)",
               color: tab === t ? "var(--bg)" : "var(--muted)",
               border: "1px solid var(--border)",
@@ -163,11 +165,13 @@ export default function ExperienceSection() {
                 {e.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-0.5 rounded-full text-xs"
+                    className="rounded-full"
                     style={{
                       border: "1px solid var(--border)",
                       color: "var(--muted)",
                       background: "var(--surface)",
+                      padding: "0.2rem 0.7rem",
+                      fontSize: "0.7rem",
                     }}
                   >
                     {tag}
