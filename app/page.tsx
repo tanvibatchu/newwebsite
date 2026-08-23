@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const wStyle = { paddingLeft: "clamp(2rem, 8vw, 8rem)", paddingRight: "clamp(2rem, 8vw, 8rem)", maxWidth: "1200px", margin: "0 auto" } as const;
+const wStyle = { paddingLeft: "clamp(0.5rem, 2vw, 2rem)", paddingRight: "clamp(0.5rem, 2vw, 2rem)", maxWidth: "1200px", margin: "0 auto" } as const;
 
 const bullets: React.ReactNode[] = [
   <>co-founded a financial literacy org at 15 — grew it to 500+ students across Canada.</>,
@@ -57,7 +57,7 @@ export default function Home() {
     <div>
 
       {/* ─── HERO ─────────────────────────────────── */}
-      <section className="pb-32" style={{ paddingTop: "2rem" }}>
+      <section style={{ minHeight: "50vh", display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: "2rem", paddingBottom: "2rem" }}>
         <div style={wStyle}>
 
         {/* Top nav */}
@@ -171,7 +171,7 @@ export default function Home() {
       </section>
 
       {/* ─── ABOUT (dark) ─────────────────────────── */}
-      <section id="about" style={{ background: "var(--bg-alt)", paddingTop: "1rem" }} className="pb-72">
+      <section id="about" style={{ background: "var(--bg-alt)", minHeight: "50vh", display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: "2rem", paddingBottom: "2rem" }}>
         <div style={wStyle}>
           <h2
             className="font-extrabold mb-16"
