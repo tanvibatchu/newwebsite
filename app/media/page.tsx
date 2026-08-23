@@ -52,7 +52,7 @@ export default function MediaPage() {
           display: flex;
           gap: 1rem;
           width: max-content;
-          animation: scroll-left 28s linear infinite;
+          animation: scroll-left 35s linear infinite;
         }
         .album-strip:hover {
           animation-play-state: paused;
@@ -61,7 +61,7 @@ export default function MediaPage() {
           display: flex;
           gap: 1rem;
           width: max-content;
-          animation: scroll-right 22s linear infinite;
+          animation: scroll-right 35s linear infinite;
         }
         .book-strip:hover {
           animation-play-state: paused;
