@@ -61,7 +61,7 @@ export default function Home() {
         <div style={wStyle}>
 
         {/* Top nav */}
-        <div className="flex gap-4 items-start">
+        <div className="flex flex-col gap-4 items-start md:flex-row">
 
           {/* Left */}
           <div className="flex-1 min-w-0">
@@ -113,7 +113,7 @@ export default function Home() {
           {/* Right — nav + photo */}
           <div className="shrink-0 flex flex-col items-start gap-5" style={{ width: "auto", paddingTop: "1.25rem" }}>
             {/* Nav links + socials */}
-            <div className="flex items-center gap-3 whitespace-nowrap">
+            <div className="flex items-center gap-3 flex-wrap">
               <Link
                 href="/work"
                 className="font-semibold transition-opacity hover:opacity-60"
@@ -161,8 +161,8 @@ export default function Home() {
             <img
               src="/photo-main.png"
               alt="Tanvi"
-              className="w-48 rounded-2xl object-cover object-top"
-              style={{ height: "256px", width: "192px", border: "1px solid var(--border)", marginTop: "2.5rem" }}
+              className="w-48 rounded-2xl object-cover object-top hidden md:block"
+              style={{ height: "256px", width: "192px", border: "1px solid var(--border)", marginTop: "2.5rem", marginLeft: "4rem" }}
             />
           </div>
 
@@ -184,7 +184,7 @@ export default function Home() {
           >
             About me
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "4rem", alignItems: "center" }}>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center">
             <div className="flex flex-col gap-4">
               <p style={{ color: "var(--body-alt)", lineHeight: 1.9 }}>
                 Hey! I&apos;m Tanvi, and I like solving random problems and building things. Ever since I was little, I&apos;ve loved the concept of solving problems and creating impact. It started with social initiatives and moved to programming to build the actual tools behind it.
@@ -225,7 +225,7 @@ export default function Home() {
               </div>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <div className="shrink-0 flex flex-col gap-4">
+            <div className="hidden md:flex shrink-0 flex-col gap-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/photo-whiteboard.png"
