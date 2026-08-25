@@ -68,7 +68,7 @@ export default function MediaPage() {
         }
       `}</style>
 
-      <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", background: "var(--bg)", overflow: "hidden", padding: "3rem 0" }}>
+      <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", background: "var(--bg)", overflow: "hidden", padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
 
         {/* Heading */}
         <div style={{ paddingLeft: "clamp(1rem, 4vw, 4rem)", paddingRight: "clamp(1rem, 4vw, 4rem)", maxWidth: "1200px", margin: "0 auto 2rem", width: "100%" }}>
@@ -81,10 +81,10 @@ export default function MediaPage() {
         </div>
 
         {/* Books row: 3/4 carousel + 1/4 sticky note */}
-        <div style={{ display: "flex", width: "100%", alignItems: "stretch", marginBottom: "1.5rem" }}>
+        <div className="flex flex-row w-full items-stretch" style={{ marginBottom: "1.5rem" }}>
 
-          {/* Carousel — 75% wide, clipped */}
-          <div style={{ width: "75%", overflow: "hidden", minWidth: 0 }}>
+          {/* Carousel — 75% wide on desktop, full width on mobile */}
+          <div className="w-full md:w-3/4 overflow-hidden min-w-0">
             <p style={{ paddingLeft: "clamp(1rem, 4vw, 4rem)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.75rem" }}>Books</p>
             <div className="book-strip">
               {[...books, ...books].map((b, i) => (
@@ -98,8 +98,8 @@ export default function MediaPage() {
             </div>
           </div>
 
-          {/* Sticky note — 25% wide */}
-          <div style={{ width: "25%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 1.5rem 0 1rem" }}>
+          {/* Sticky note — hidden on mobile, 25% on desktop */}
+          <div className="hidden md:flex" style={{ width: "25%", flexShrink: 0, alignItems: "center", justifyContent: "center", padding: "0 1.5rem 0 1rem" }}>
             <div style={{
               background: "#fed7aa",
               color: "#1a1a1a",
