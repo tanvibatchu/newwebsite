@@ -135,13 +135,6 @@ export default function Home() {
                 >
                   awards
                 </Link>
-                <Link
-                  href="/media"
-                  className="font-semibold transition-opacity hover:opacity-60"
-                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
-                >
-                  media
-                </Link>
                 <a
                   href="/resume.pdf"
                   target="_blank"
@@ -151,6 +144,13 @@ export default function Home() {
                 >
                   resume
                 </a>
+                <Link
+                  href="/media"
+                  className="font-semibold transition-opacity hover:opacity-60"
+                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+                >
+                  media
+                </Link>
               <span style={{ color: "var(--border)" }}>|</span>
               {socials.map((s) => (
                 <a
