@@ -9,7 +9,7 @@ const awards = [
         year: "2025",
         title: "EGOI National Team Camp Qualifier + CIW Bronze Medallist",
     sub: "Top 10 female competitive programmers out of 4,000+ participants in the CCC",
-    href: "https://cemc.uwaterloo.ca/contests/past_contests/2025/2025CIWSummary.pdf",
+    href: "/ciw_summary.pdf",
   },
   {
     year: "2025",

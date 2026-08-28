@@ -17,7 +17,7 @@ const building: React.ReactNode[] = [
     {", "}
     <a href="/work#projects" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>building</a>
     {", and "}
-    <a href="https://cemc.uwaterloo.ca/contests/past_contests/2025/2025CIWSummary.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>competitive programming</a>
+    <a href="/ciw_summary.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>competitive programming</a>
     {"! (click the links 🙈)"}
   </>,
 ];
