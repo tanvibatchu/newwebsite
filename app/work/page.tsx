@@ -55,6 +55,15 @@ export default function WorkPage() {
         >
           ← back
         </Link>
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-60"
+          style={{ color: "var(--muted)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+        >
+          resume ↗
+        </a>
       </div>
 
       {/* ─── EXPERIENCE ───────────────────── */}

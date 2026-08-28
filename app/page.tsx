@@ -142,6 +142,15 @@ export default function Home() {
                 >
                   media
                 </Link>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold transition-opacity hover:opacity-60"
+                  style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
+                >
+                  resume
+                </a>
               <span style={{ color: "var(--border)" }}>|</span>
               {socials.map((s) => (
                 <a
