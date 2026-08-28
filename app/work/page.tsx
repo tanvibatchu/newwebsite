@@ -47,7 +47,7 @@ export default function WorkPage() {
   return (
     <div>
       {/* Back link */}
-      <div style={wStyle} className="pt-10 pb-2">
+      <div style={{ ...wStyle, paddingTop: "1.375rem", paddingBottom: "0.5rem" }} className="flex items-center justify-between">
         <Link
           href="/"
           className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-60"
