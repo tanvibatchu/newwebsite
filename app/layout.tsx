@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             opacity: 0.7,
             transition: "opacity 0.2s",
           }}
-          className="hover:opacity-100"
+          className="hover:opacity-100 hidden md:block"
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
