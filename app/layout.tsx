@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import CursorGlow from "@/components/CursorGlow";
 import BottomDock from "@/components/BottomDock";
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="pb-24">{children}</main>
         </div>
         <BottomDock />
+        <Analytics />
       </body>
     </html>
   );
