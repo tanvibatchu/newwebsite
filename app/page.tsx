@@ -136,9 +136,7 @@ export default function Home() {
                   awards
                 </Link>
                 <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:tsabatch@uwaterloo.ca?subject=Resume%20Request&body=Hi%20Tanvi%2C%0A%0AI%27d%20love%20to%20get%20a%20copy%20of%20your%20resume!"
                   className="font-semibold transition-opacity hover:opacity-60"
                   style={{ color: "var(--ink)", fontSize: "1rem", textDecoration: "underline", textUnderlineOffset: "4px" }}
                 >
